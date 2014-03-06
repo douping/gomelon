@@ -1,0 +1,13 @@
+@(stylists: Seq[Stylist] = Nil)
+
+<!-- components to list the hair style. -->
+    <span class="toggle">Stylists:</span>
+    <h4 class="groupName">Do our best!</h4>
+
+    <ol>
+    @for(stylist <- stylists) {
+    	<li>
+          @views.html.stylist.item(stylist)
+   	</li>
+    }
+    </ol> 

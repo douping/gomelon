@@ -1,0 +1,74 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                              controllers.Application.index
+
+# Salons Management
+
+
+
+# Stylists Management
+
+GET     /findStylist                   controllers.Stylists.findStylist
+
+GET     /checkStylist                  controllers.Stylists.checkStylist
+
+# Reservations Management
+GET     /findReserv/:page              controllers.record.Records.findReserv(page:Int) 
+
+GET     /checkReservInfo/:id           controllers.record.Records.checkReservInfo(id: ObjectId)
+
+GET     /selectStylistReserv           controllers.record.Records.selectStylistReserv
+
+GET     /cancelRecord/:id              controllers.record.Records.cancelRecord(id: ObjectId)
+
+GET     /overdateRecord/:id            controllers.record.Records.overdateRecord(id: ObjectId)
+
+GET     /finishRecord/:id              controllers.record.Records.finishRecord(id: ObjectId)
+
+
+# Salon 
+GET     /salon                         controllers.Salons.index
+
+GET     /salon/:id                     controllers.Salons.getSalon(id: ObjectId)
+
+#
+# Style
+GET     /style                         controllers.Styles.index
+
+GET     /style/:id                     controllers.Styles.findById(id: ObjectId)
+
+GET     /salon/:salonId/styles         controllers.Styles.findBySalon(salonId: ObjectId)
+
+GET     /salon/:slnId/style/:styId     controllers.Styles.findBySalonAndId(slnId: ObjectId, styId: ObjectId)
+
+
+#
+# Stylist
+
+GET     /stylist/:id                   controllers.Stylists.findById(id: ObjectId)
+
+GET     /salon/:salonId/Stylists       controllers.Stylists.findBySalon(salonId: ObjectId)
+
+
+
+GET		/findRecordByCondition			controllers.record.Records.findRecordByCondition
+
+#add reservation
+GET		/reserHairView					controllers.reservation.Reservations.reservHairView
+
+GET 	/reserSelectDate				controllers.reservation.Reservations.reservSelectDate
+
+GET		/reservSelectStylist			controllers.reservation.Reservations.reservSelectStylist
+
+POST 	/reserConfirmPwd				controllers.reservation.Reservations.reservConfirmPwd
+
+GET 	/reserFinish					controllers.reservation.Reservations.reservFinish
+
+GET  	/reserConfirmInfo				controllers.reservation.Reservations.reservConfirmInfo
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               	controllers.Assets.at(path="/public", file)

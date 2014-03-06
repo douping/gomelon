@@ -1,0 +1,44 @@
+@(message: String)
+
+@main(Messages("site.title"), nav = "hair-salon") {
+
+	<div id="mainContents">
+	    <div class="cFix">
+		<ol class="pankuzu cFix pankuzuShort">
+		    <li>
+		        <a href="http://beauty.hotpepper.jp/top/">
+		            総合トップ
+		        </a>
+		        &nbsp;&nbsp;&gt;&nbsp;&nbsp;
+		    </li>
+		    <li>
+		        <strong>
+		            美容院・美容室・ヘアサロン検索トップ
+		        </strong>
+		    </li>
+		</ol>
+		<div class="w180 fr taR mT8">
+		    <a target="_blank" title="ご掲載をお考えの方へ" href="http://beauty.hotpepper.jp/doc/keisai/keisai.html"
+		    onclick="customLinkLog('Top Salon Link');">
+		        掲載をご希望のサロン様はこちら
+		    </a>
+		</div>
+	    </div>
+	    <div class="pT15 cFix">
+		<div class="cFix">
+		    <!-- ↓mainContentLeftColumn -->
+		    @views.html.salon.leftColumn()
+	            <!-- ↑mainContentLeftColumn -->
+
+	            <!-- ↓mainContentMiddleColumn -->
+		    @views.html.salon.middleColumn()
+	            <!-- ↑mainContentMiddleColumn -->
+
+		    <!-- ↓mainContentRightColumn -->
+		    @views.html.salon.rightColumn()
+		    <!-- ↑mainContentRightColumn -->
+		</div>
+	    </div>
+	</div>
+
+}
